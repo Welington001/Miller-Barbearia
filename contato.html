@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Contato | Miller Barbearia</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/contato.css">
+    <link rel="stylesheet" href="assets/css/medias.css">
+    <link rel="stylesheet" href="assets/css/body.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        .message {
+            display: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#conteudoPrincipal">Pular para o conteúdo principal</a>
+        <div class="caixa">
+            <h1><img height="300" width="400" src="logobarbearia.png" alt="Logo Miller Barbearia"></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <form id="contatoForm" action="https://formspree.io/f/mleqyyaq" method="POST">
+            <fieldset>
+                <label for="nome-sobrenome">Nome e Sobrenome</label>
+                <input type="text" id="nome-sobrenome" name="nome-sobrenome" class="input-padrao" required>
+
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" name="telefone" class="input-padrao" placeholder="(XX) XXXXX-XXXX" required>
+
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" class="input-padrao" placeholder="seuemail@seudomínio.com" required>
+
+                <label for="mensagem">Mensagem</label>
+                <textarea cols="75" rows="10" id="mensagem" name="mensagem" class="input-padrao" required></textarea>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Qual horário prefere ser atendido?</legend>
+                <select name="horario">
+                    <option>8hrs</option>
+                    <option>9hrs</option>
+                    <option>10hrs</option>
+                    <option>11hrs</option>
+                    <option>13hrs</option>
+                    <option>14hrs</option>
+                    <option>15hrs</option>
+                    <option>16hrs</option>
+                    <option>17hrs</option>
+                    <option>18hrs</option>
+                    <option>19hrs</option>
+                    <option>19:30hrs</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Qual Dia prefere ser atendido?</legend>
+                <select name="dia">
+                    <option>Segunda-feira</option>
+                    <option>Terça-feira</option>
+                    <option>Quarta-feira</option>
+                    <option>Quinta-feira</option>
+                    <option>Sexta-feira</option>
+                    <option>Sábado</option>
+                </select>
+            </fieldset>
+
+            <label for="checkbox"><input type="checkbox" class="checkbox" id="checkbox" name="novidades" checked> Gostaria de receber nossas novidades por e-mail?</label>
+
+            <input type="submit" value="Enviar formulário" class="enviar">
+        </form>
+
+        <div id="mensagemAgendamento" class="message">
+            Corte já foi agendado
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Dia</th>
+                    <th>Horário</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Segunda-feira</td>
+                    <td>08h às 20h</td>
+                </tr>
+                <tr>
+                    <td>Terça-feira</td>
+                    <td>08h às 20h</td>
+                </tr>
+                <tr>
+                    <td>Quarta-feira</td>
+                    <td>08h às 20h</td>
+                </tr>
+                <tr>
+                    <td>Quinta-feira</td>
+                    <td>08h às 20h</td>
+                </tr>
+                <tr>
+                    <td>Sexta-feira</td>
+                    <td>08h às 20h</td>
+                </tr>
+                <tr>
+                    <td>Sábado</td>
+                    <td>08h às 20h</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <img height="300" width="400" src="logobarbearia.png" alt="Logo Miller Barbearia">
+        <p class="Copyright">&copy;Copyright Miller Barbearia - 2024</p>
+    </footer>
+
+    <script>
+        document.getElementById('contatoForm').addEventListener('submit', function(event) {
+            // event.preventDefault(); // Remova esta linha para permitir o envio do formulário
+            document.getElementById('mensagemAgendamento').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
